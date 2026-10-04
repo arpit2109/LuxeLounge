@@ -1,0 +1,9 @@
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.BookingListCreateView.as_view(), name='booking-list'),
+    path('<int:pk>/', views.BookingDetailView.as_view(), name='booking-detail'),
+    path('user/', views.UserBookingsListView.as_view(), name='user-bookings'),
+    path('all/', views.AllBookingsListView.as_view(), name='all-bookings'),  # Add this line
+]
